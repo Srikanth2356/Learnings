@@ -88,6 +88,7 @@ Screen1 As screen:
         ZIndex: =4
 
     BarcodeScanner1_1 As barcodeScanner:
+        Fill: =RGBA(172, 62, 11, 1)
         Height: =76
         OnScan: =Launch(BarcodeScanner1_1.Value)
         Size: =24
