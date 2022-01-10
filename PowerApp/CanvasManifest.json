@@ -17,7 +17,7 @@
       "blockmovingcontrol": false,
       "classiccontrols": false,
       "componentauthoring": false,
-      "copyandmerge": false,
+      "copyandmerge": true,
       "datatablev2control": false,
       "delaycontrolrendering": false,
       "delayloadscreens": false,
