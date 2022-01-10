@@ -1,0 +1,31 @@
+{
+  "9c12bf46-65a3-4259-9847-e060fdbf6cd7": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/d7e373636e8b435b96b3c702a8979f73",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://wisseninfotech0-my.sharepoint.com/personal/srikanth_devagudi_wisseninfotech_com": {
+        "dataSources": {
+          "Barcode Scans": {
+            "tableName": "fa489105-336a-458d-8f78-60f5ec0ec1f2"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Barcode Scans"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9c12bf46-65a3-4259-9847-e060fdbf6cd7"
+  }
+}

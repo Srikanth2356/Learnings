@@ -1,0 +1,121 @@
+Screen1 As screen:
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        Items: =multiScanCollect
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(104, Self.Height - 60)
+        Y: =186
+        ZIndex: =1
+
+        Title2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ScannedPerson
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.BarcodeValue
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title2.Y + Title2.Height + 4
+            ZIndex: =2
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+    BarcodeScanner1 As barcodeScanner:
+        Height: =70
+        OnScan: =Set(varScan, BarcodeScanner1.Value)
+        Size: =24
+        Text: ="Scan"
+        Width: =280
+        X: =1017
+        Y: =256
+        ZIndex: =1
+
+    Label1 As label:
+        Height: =57
+        Size: =21
+        Text: =varScan
+        Width: =337
+        X: =1017
+        Y: =360
+        ZIndex: =2
+
+    TextInput1 As text:
+        Default: ="Result"
+        Height: =55
+        Size: =21
+        Width: =135
+        X: =863
+        Y: =360
+        ZIndex: =4
+
+    BarcodeScanner1_1 As barcodeScanner:
+        Height: =76
+        OnScan: =Launch(BarcodeScanner1_1.Value)
+        Size: =24
+        Text: ="Scans & Navigates"
+        Width: =368
+        X: =998
+        Y: =450
+        ZIndex: =5
+
+    BarcodeScanner1_2 As barcodeScanner:
+        Height: =53
+        OnScan: |-
+            =Collect(multiScanCollect, {BarcodeValue: BarcodeScanner1_2.Value, BarcodeType: BarcodeScanner1_2.Type, ScannedPerson: User().FullName, ScannedTime: Now()})
+        Size: =24
+        Text: ="Multiple Scan"
+        Width: =368
+        X: =998
+        Y: =559
+        ZIndex: =6
+
+    BarcodeScanner1_3 As barcodeScanner:
+        Height: =53
+        OnScan: |-
+            =Patch('Barcode Scans', {Title: BarcodeScanner1_3.Value, BarcodeType: BarcodeScanner1_3.Type, ScannedPerson: User().FullName, ScannedTime: Now()})
+        Size: =24
+        Text: ="Scan & Move SP"
+        Width: =368
+        X: =998
+        Y: =642
+        ZIndex: =7
+
